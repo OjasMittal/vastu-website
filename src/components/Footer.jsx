@@ -3,11 +3,21 @@ import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 export default function Footer() {
 	return (
 		<footer id='contact' className='bg-orange-100 text-orange-900 py-12'>
-			<div className='max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center'>
-				{/* Left: Company Info */}
-				<div className='mb-6 md:mb-0 text-center md:text-left'>
-					<h3 className='text-2xl font-bold'>Tulika Mittal</h3>
-					<p className='mt-2'>Certified MahaVastu Expert</p>
+			<div className='max-w-6xl mx-auto px-6  pr-10 flex flex-col md:flex-row md:justify-between items-center'>
+				{/* Left: Profile Photo + Company Info */}
+				<div className='flex items-center mb-6 md:mb-0 text-center md:text-left space-x-4'>
+					{/* Profile Image */}
+					<img
+						src='https://yt3.ggpht.com/GB5wsxHr8aiKb48wmH3eXLKEaXQrA7Uxq-_FY_etvHj8QC6CJFInYJEHgr-n60YKVgd-yrhJ1A=s176-c-k-c0x00ffffff-no-rj-mo'
+						alt='Tulika Mittal'
+						className='w-20 h-20 rounded-full object-cover shadow-md'
+					/>
+
+					{/* Name and Tagline */}
+					<div className='text-left'>
+						<h3 className='text-2xl font-bold'>Tulika Mittal</h3>
+						<p className='mt-1'>Certified MahaVastu Expert</p>
+					</div>
 				</div>
 
 				{/* Middle: Social Links */}
@@ -46,8 +56,8 @@ export default function Footer() {
 			</div>
 
 			{/* Bottom Line */}
-			<div className='mt-8 text-center text-sm text-orange-700'>
-				© {new Date().getFullYear()}Vastu Vid Tulika
+			<div className='mt-8 text-center text-sm text-orange-700 mx-auto'>
+				© {new Date().getFullYear()} Vastu Vid Tulika
 			</div>
 		</footer>
 	);
