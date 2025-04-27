@@ -9,7 +9,7 @@ function HomeServiceDetails() {
 	const handleModalToggle = () => setShowModal(!showModal);
 
 	return (
-		<div className='min-h-screen bg-yellow-50 p-6 md:p-12 flex flex-col justify-between'>
+		<div className='min-h-screen bg-yellow-50 p-6 pt-28 md:p-12 flex flex-col justify-between'>
 			{/* Modal */}
 			<BookConsultationModal
 				showModal={showModal}

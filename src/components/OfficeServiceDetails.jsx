@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import BookConsultationModal from "../components/BookConsultationModal"; // Assuming you have this modal
+import BookConsultationModal from "../components/BookConsultationModal";
 
 function OfficeServiceDetails() {
 	const [showModal, setShowModal] = useState(false);
@@ -9,7 +9,7 @@ function OfficeServiceDetails() {
 	const handleModalToggle = () => setShowModal(!showModal);
 
 	return (
-		<div className='min-h-screen bg-yellow-50 p-6 md:p-12 flex flex-col justify-between'>
+		<div className='min-h-screen bg-yellow-50 p-6 pt-28 md:p-12 flex flex-col justify-between'>
 			<BookConsultationModal
 				showModal={showModal}
 				setShowModal={setShowModal}
