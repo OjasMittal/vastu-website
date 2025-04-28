@@ -22,7 +22,7 @@ const testimonials = [
 	{
 		name: "Ankur Chandra",
 		feedback:
-			"Thanks Tullika Mam for your Vasari consultation . Your inputs on color paint in house and a few other changes helped me to get more success in my career and promotion .It also helped to keep my health good .Thanks for your advise and checking in regularly .",
+			"Tulika Maam's inputs on color paint in house and a few other changes helped me to get more success in my career and promotion and also health good. Thanks for your advise and checking in regularly .",
 		city: "Hyderabad",
 		country: "India",
 		countryCode: "IN",
@@ -34,6 +34,14 @@ const testimonials = [
 		city: "Ho Chi Minh City",
 		country: "Vietnam",
 		countryCode: "VN",
+	},
+	{
+		name: "Abhishek Bhattacharya",
+		feedback:
+			"Very Small & easy to do remedies given by Tulika Maam, helped me improve my relations with my wife and kids.",
+		city: "Kolkata",
+		country: "India",
+		countryCode: "IN",
 	},
 ];
 
