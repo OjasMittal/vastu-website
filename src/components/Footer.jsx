@@ -57,7 +57,7 @@ export default function Footer() {
 
 			{/* Bottom Line */}
 			<div className='mt-8 text-center text-sm text-orange-700 mx-auto'>
-				© {new Date().getFullYear()} Vastu Vid Tulika
+				© {new Date().getFullYear()}. All Rights Reserved. Vastu Vid Tulika
 			</div>
 		</footer>
 	);
