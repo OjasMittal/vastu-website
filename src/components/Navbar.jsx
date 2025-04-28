@@ -23,7 +23,7 @@ function Navbar() {
 
 	return (
 		<nav className={navbarClasses}>
-			<div className='max-w-7xl mx-auto px-4 py-4 flex justify-between items-center'>
+			<div className='w-full max-w-7xl mx-auto px-4 py-4 flex justify-between items-center'>
 				<div className='text-2xl font-bold text-orange-800'>
 					MahaVastu Expert
 				</div>
