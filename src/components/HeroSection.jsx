@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import BookConsultationModal from "./BookConsultationModal"; // Import here
+import LottieAnimation from "./LottieAnimation";
 
 function HeroSection() {
 	const [showModal, setShowModal] = useState(false);
@@ -10,7 +11,7 @@ function HeroSection() {
 	return (
 		<section
 			id='home'
-			className='relative h-screen bg-gradient-to-br from-yellow-50 to-orange-100 flex flex-col justify-center items-center text-center px-4'
+			className='relative min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 flex flex-col justify-center items-center text-center px-4 pt-24'
 		>
 			{/* Modal */}
 			<BookConsultationModal
@@ -52,6 +53,7 @@ function HeroSection() {
 			>
 				Book a Consultation
 			</motion.button>
+			<LottieAnimation />
 		</section>
 	);
 }
