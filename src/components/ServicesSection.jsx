@@ -37,7 +37,7 @@ function ServicesSection() {
 						className='w-full h-64 object-cover rounded-lg'
 					/>
 					<h3 className='text-xl font-semibold text-orange-700 mt-4'>Home</h3>
-					<p className='mt-2 text-sm text-orange-600'>
+					<p className='mt-2 text-sm'>
 						Personalized Vastu solutions to create a harmonious living
 						environment.
 					</p>
@@ -61,7 +61,7 @@ function ServicesSection() {
 						className='w-full h-64 object-cover rounded-lg'
 					/>
 					<h3 className='text-xl font-semibold text-orange-700 mt-4'>Office</h3>
-					<p className='mt-2 text-sm text-orange-600'>
+					<p className='mt-2 text-sm'>
 						Boost success and positivity in your office space through Vastu
 						corrections.
 					</p>
@@ -87,7 +87,7 @@ function ServicesSection() {
 					<h3 className='text-xl font-semibold text-orange-700 mt-4'>
 						Factory
 					</h3>
-					<p className='mt-2 text-sm text-orange-600'>
+					<p className='mt-2 text-sm'>
 						Enhance production efficiency and profitability with Vastu
 						practices.
 					</p>

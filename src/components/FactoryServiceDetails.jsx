@@ -26,7 +26,7 @@ function FactoryServiceDetails() {
 				<h1 className='text-4xl font-bold text-orange-800 mb-6 text-center'>
 					Factory Vastu Service
 				</h1>
-				<p className='text-lg text-orange-700 mb-10 text-center max-w-3xl mx-auto'>
+				<p className='text-lg text-black mb-10 text-center max-w-3xl mx-auto'>
 					Maximize your factory's production, quality, and cash flow with
 					scientific Vastu applications.
 				</p>
@@ -46,7 +46,7 @@ function FactoryServiceDetails() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.7 }}
-					className='space-y-8 text-orange-600 text-justify'
+					className='space-y-8 text-black text-justify'
 				>
 					<p>
 						We specialize in aligning your factory layout and machinery
@@ -68,7 +68,7 @@ function FactoryServiceDetails() {
 						</li>
 						<li>
 							Discussion and identification of issues related to{" "}
-							<strong>
+							<strong className='text-orange-700'>
 								production quality, sales, cash flow, banking support, and
 								departmental issues
 							</strong>{" "}

@@ -4,7 +4,6 @@ import { useState } from "react";
 import BookConsultationModal from "../components/BookConsultationModal";
 import BottomButtons from "./BottomButtons";
 
-
 function OfficeServiceDetails() {
 	const [showModal, setShowModal] = useState(false);
 
@@ -27,7 +26,7 @@ function OfficeServiceDetails() {
 				<h1 className='text-4xl font-bold text-orange-800 mb-6 text-center'>
 					Office Vastu Service
 				</h1>
-				<p className='text-lg text-orange-700 mb-10 text-center max-w-3xl mx-auto'>
+				<p className='text-lg text-black mb-10 text-center max-w-3xl mx-auto'>
 					Align your workplace energy for unstoppable business growth and
 					success with our Vastu expertise.
 				</p>
@@ -47,7 +46,7 @@ function OfficeServiceDetails() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.7 }}
-					className='space-y-8 text-orange-600 text-justify'
+					className='space-y-8 text-black text-justify'
 				>
 					<p>
 						Our expert team brings MahaVastu-certified methods to optimize your
@@ -70,7 +69,7 @@ function OfficeServiceDetails() {
 						</li>
 						<li>
 							Problems like{" "}
-							<strong>
+							<strong className='text-orange-700'>
 								blocked payments, legal disputes, wrong decisions, low order
 								flow, loan rejections, investment losses, missed opportunities,
 								and stagnant growth

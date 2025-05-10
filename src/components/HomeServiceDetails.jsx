@@ -28,7 +28,7 @@ function HomeServiceDetails() {
 				<h1 className='text-4xl font-bold text-orange-800 mb-6 text-center'>
 					Home Vastu Service
 				</h1>
-				<p className='text-lg text-orange-700 mb-10 text-center max-w-3xl mx-auto'>
+				<p className='text-lg text-black mb-10 text-center max-w-3xl mx-auto'>
 					Unlock the secrets to a harmonious and prosperous home with our expert
 					Vastu Audit.
 				</p>
@@ -48,7 +48,7 @@ function HomeServiceDetails() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.7 }}
-					className='space-y-8 text-orange-600 text-justify'
+					className='space-y-8 text-black text-justify'
 				>
 					<p>
 						Our certified experts conduct a detailed Vastu Dosha Audit by
@@ -62,34 +62,42 @@ function HomeServiceDetails() {
 
 					<ul className='list-disc ml-6 space-y-3'>
 						<li>
-							<strong>
+							<strong className='text-orange-700'>
 								Entrance, Toilets, Sewage, Directional Strength, Road Hit:
-							</strong>
+							</strong>{" "}
 							All vital elements are treated by MahaVastu Experts to balance the
 							five elements (Panchmahabhutas).
 						</li>
 						<li>
-							<strong>Relocation & Rectification:</strong>
+							<strong className='text-orange-700'>
+								Relocation & Rectification:
+							</strong>{" "}
 							Activities and utilities are shifted using special MahaVastu
 							techniques to enhance positive energies.
 						</li>
 						<li>
-							<strong>Interior Decor Alignment:</strong>
+							<strong className='text-orange-700'>
+								Interior Decor Alignment:
+							</strong>{" "}
 							Furniture, paintings, mirrors, and decor items are strategically
 							repositioned to support Vastu compliance.
 						</li>
 						<li>
-							<strong>Astrological Balancing:</strong>
+							<strong className='text-orange-700'>
+								Astrological Balancing:
+							</strong>{" "}
 							Energy alignment is done based on your horoscope, syncing the
 							home’s energy field with cosmic planetary forces.
 						</li>
 						<li>
-							<strong>Marma Points Remedy:</strong>
+							<strong className='text-orange-700'>Marma Points Remedy:</strong>{" "}
 							Powerful rectifications are done based on ancient energy points to
 							unlock blockages and increase flow.
 						</li>
 						<li>
-							<strong>Intuitive Devta Diagnosis:</strong>
+							<strong className='text-orange-700'>
+								Intuitive Devta Diagnosis:
+							</strong>{" "}
 							Unique MahaVastu method to diagnose Devtas (spiritual energies)
 							and perform remedies to strengthen your Karma Siddhi (success
 							potential).
