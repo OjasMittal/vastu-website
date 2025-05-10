@@ -12,6 +12,8 @@ import HomeServiceDetails from "./components/HomeServiceDetails";
 import OfficeServiceDetails from "./components/OfficeServiceDetails";
 import FactoryServiceDetails from "./components/FactoryServiceDetails";
 import WhatWeRectify from "./components/WhatWeRectify";
+import VastuMedia from './components/VastuMedia';
+
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
         <Route path="/services/home" element={<HomeServiceDetails />} />
         <Route path="/services/office" element={<OfficeServiceDetails />} />
         <Route path="/services/factory" element={<FactoryServiceDetails />} />
+        <Route path="/media" element={<VastuMedia />} />
       </Routes>
     </Router>
   );

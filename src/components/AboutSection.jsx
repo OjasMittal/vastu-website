@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import mom from "../assets/mom_img.jpg";
 
 function AboutSection() {
@@ -84,6 +85,15 @@ function AboutSection() {
 						Our mission is to transform your living and working environments
 						into powerful energy hubs — promoting holistic well-being,
 						happiness, and abundance in your life.
+					</p>
+					<p className='mt-6 text-lg'>
+					✨ Check out some{" "}
+						<Link
+							to='/media'
+							className='text-orange-700 font-semibold hover:underline'
+						>
+							Vastu tips & videos →
+						</Link>
 					</p>
 				</motion.div>
 			</div>

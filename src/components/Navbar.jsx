@@ -47,6 +47,12 @@ function Navbar() {
 						About
 					</a>
 					<a
+						href='/media'
+						className='text-orange-700 hover:text-orange-900 transition'
+					>
+						Vastu Tips
+					</a>
+					<a
 						href='/#contact'
 						className='text-orange-700 hover:text-orange-900 transition'
 					>

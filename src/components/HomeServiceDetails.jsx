@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import BookConsultationModal from "../components/BookConsultationModal";
+import BottomButtons from "./BottomButtons";
 
 function HomeServiceDetails() {
 	const [showModal, setShowModal] = useState(false);
@@ -101,26 +102,7 @@ function HomeServiceDetails() {
 					</p>
 				</motion.div>
 			</motion.div>
-
-			{/* Bottom Buttons */}
-			<div className='flex justify-between items-center mt-16'>
-				{/* Back to Services Button */}
-				<Link to='/'>
-					<button className='px-6 py-3 bg-orange-200 text-orange-800 font-semibold rounded-full shadow hover:bg-orange-300 transition'>
-						← Back to Services
-					</button>
-				</Link>
-
-				{/* Book a Consultation Button */}
-				<motion.button
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.9 }}
-					onClick={handleModalToggle}
-					className='px-6 py-3 bg-orange-700 text-white font-semibold rounded-full shadow hover:bg-orange-800 transition mr-10'
-				>
-					Book a Consultation
-				</motion.button>
-			</div>
+			<BottomButtons onBookClick={handleModalToggle} />
 		</div>
 	);
 }
