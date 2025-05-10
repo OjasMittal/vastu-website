@@ -6,7 +6,7 @@ import BottomButtons from "./BottomButtons";
 
 const videos = [
 	{
-		title: "Kitchen Cooking Top Colour Tips",
+		title: "Tips for Kitchen Renovation",
 		youtubeUrl: "https://www.youtube.com/embed/A5c85jajblI",
 	},
 
@@ -26,11 +26,11 @@ const videos = [
 ];
 
 export default function VastuMedia() {
-        const [showModal, setShowModal] = useState(false);
-        const handleModalToggle = () => setShowModal(!showModal);
+	const [showModal, setShowModal] = useState(false);
+	const handleModalToggle = () => setShowModal(!showModal);
 	return (
 		<section className='min-h-screen py-20 bg-orange-50'>
-            <BookConsultationModal
+			<BookConsultationModal
 				showModal={showModal}
 				setShowModal={setShowModal}
 			/>

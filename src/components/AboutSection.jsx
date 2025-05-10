@@ -92,7 +92,7 @@ function AboutSection() {
 							to='/media'
 							className='text-orange-700 font-semibold hover:underline'
 						>
-							Vastu tips & videos →
+							Vastu tips & videos
 						</Link>
 					</p>
 				</motion.div>

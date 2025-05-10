@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react"; // You can also use Heroicons or SVGs
 
 function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const offset = window.scrollY;
-			if (offset > 50) {
-				setScrolled(true);
-			} else {
-				setScrolled(false);
-			}
+			setScrolled(window.scrollY > 50);
 		};
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
@@ -27,6 +24,8 @@ function Navbar() {
 				<div className='text-2xl font-bold text-orange-800'>
 					MahaVastu Expert
 				</div>
+
+				{/* Desktop Nav */}
 				<div className='space-x-8 hidden md:flex'>
 					<Link
 						to='/'
@@ -59,7 +58,59 @@ function Navbar() {
 						Contact
 					</a>
 				</div>
+
+				{/* Mobile Menu Button */}
+				<div className='md:hidden'>
+					<button onClick={() => setMenuOpen(!menuOpen)}>
+						{menuOpen ? (
+							<X className='text-orange-800' />
+						) : (
+							<Menu className='text-orange-800' />
+						)}
+					</button>
+				</div>
 			</div>
+
+			{/* Mobile Nav Dropdown */}
+			{menuOpen && (
+				<div className='md:hidden bg-white shadow-md px-6 py-4 space-y-4'>
+					<Link
+						to='/'
+						onClick={() => setMenuOpen(false)}
+						className='block text-orange-700'
+					>
+						Home
+					</Link>
+					<a
+						href='/#services'
+						onClick={() => setMenuOpen(false)}
+						className='block text-orange-700'
+					>
+						Services
+					</a>
+					<a
+						href='/#about'
+						onClick={() => setMenuOpen(false)}
+						className='block text-orange-700'
+					>
+						About
+					</a>
+					<a
+						href='/media'
+						onClick={() => setMenuOpen(false)}
+						className='block text-orange-700'
+					>
+						Vastu Tips
+					</a>
+					<a
+						href='/#contact'
+						onClick={() => setMenuOpen(false)}
+						className='block text-orange-700'
+					>
+						Contact
+					</a>
+				</div>
+			)}
 		</nav>
 	);
 }
