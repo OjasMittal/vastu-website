@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // if you use React Router
+import { Link } from "react-router-dom";
+import home from "../assets/home_services.png";
+import office from "../assets/office_services.png";
+import factory from "../assets/factory_services.png";
 
 function ServicesSection() {
 	return (
@@ -29,7 +32,7 @@ function ServicesSection() {
 					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
 				>
 					<img
-						src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c'
+						src= {home}
 						alt='Home'
 						className='w-full h-64 object-cover rounded-lg'
 					/>
@@ -52,8 +55,8 @@ function ServicesSection() {
 					transition={{ delay: 1.8, duration: 1 }}
 					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
 				>
-					<img
-						src='https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D'
+					<img 
+						src = {office}
 						alt='Office'
 						className='w-full h-64 object-cover rounded-lg'
 					/>
@@ -77,7 +80,7 @@ function ServicesSection() {
 					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
 				>
 					<img
-						src='https://media.istockphoto.com/id/1136735121/photo/industrial-plant-for-the-production-of-large-mechanisms-machines-and-structures.webp?a=1&b=1&s=612x612&w=0&k=20&c=4DtPULzc9pNEovM4YVuiprmJYmfAOk96U1lW09yhSj8='
+						src= {factory}
 						alt='Factory'
 						className='w-full h-64 object-cover rounded-lg'
 					/>

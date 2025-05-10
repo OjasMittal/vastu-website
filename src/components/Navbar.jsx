@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // ✅ Add this
+import { Link } from "react-router-dom";
 
 function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
@@ -35,19 +35,19 @@ function Navbar() {
 						Home
 					</Link>
 					<a
-						href='#services'
+						href='/#services'
 						className='text-orange-700 hover:text-orange-900 transition'
 					>
 						Services
 					</a>
 					<a
-						href='#about'
+						href='/#about'
 						className='text-orange-700 hover:text-orange-900 transition'
 					>
 						About
 					</a>
 					<a
-						href='#contact'
+						href='/#contact'
 						className='text-orange-700 hover:text-orange-900 transition'
 					>
 						Contact

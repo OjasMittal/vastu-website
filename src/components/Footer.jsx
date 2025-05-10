@@ -1,4 +1,5 @@
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import footer from "../assets/footer.png";
 
 export default function Footer() {
 	return (
@@ -8,7 +9,7 @@ export default function Footer() {
 				<div className='flex items-center mb-6 md:mb-0 text-center md:text-left space-x-4'>
 					{/* Profile Image */}
 					<img
-						src='https://yt3.ggpht.com/GB5wsxHr8aiKb48wmH3eXLKEaXQrA7Uxq-_FY_etvHj8QC6CJFInYJEHgr-n60YKVgd-yrhJ1A=s176-c-k-c0x00ffffff-no-rj-mo'
+						src= {footer}
 						alt='Tulika Mittal'
 						className='w-20 h-20 rounded-full object-cover shadow-md'
 					/>

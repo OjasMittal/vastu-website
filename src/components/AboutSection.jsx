@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import about from "../assets/about.png";
 
 function AboutSection() {
 	return (
@@ -13,7 +14,7 @@ function AboutSection() {
 					className='md:w-1/2 mb-12 md:mb-0'
 				>
 					<img
-						src='https://housiey.com/blogs/wp-content/uploads/2024/11/Vastu-Direction-1200x900.jpg'
+						src= {about}
 						alt='About Vastu'
 						className='rounded-2xl shadow-2xl'
 					/>

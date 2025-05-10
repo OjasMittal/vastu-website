@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import BookConsultationModal from "./BookConsultationModal"; // Import here
 import LottieAnimation from "./LottieAnimation";
+import header from "../assets/header.png";
 
 function HeroSection() {
 	const [showModal, setShowModal] = useState(false);
@@ -27,7 +28,7 @@ function HeroSection() {
 				className='w-full overflow-hidden -mt-38'
 			>
 				<img
-					src='https://yt3.googleusercontent.com/7zlq8Vs41SM9f8oYD52Dm9URqDnqP-opIFPRjvdA_L3k7fM02k3Tpi60dpK-dkyy9Ede7jRbUDk=w2120-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj'
+					src= {header}
 					alt='Header'
 					className='w-full h-auto object-contain'
 				/>
