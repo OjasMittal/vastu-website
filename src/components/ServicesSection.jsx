@@ -14,11 +14,11 @@ function ServicesSection() {
 				className='text-center'
 			>
 				<h2 className='text-3xl md:text-4xl font-bold text-orange-800'>
-					Our Services
+					Services We Offer
 				</h2>
 				<p className='mt-4 text-lg md:text-xl text-orange-600 max-w-3xl mx-auto'>
-					Discover the power of Vastu Shastra to bring balance, health, wealth,
-					and good relationships to your space.
+					Vastu brings balance, health, wealth, and good relationships to your
+					space.
 				</p>
 			</motion.div>
 
@@ -32,7 +32,7 @@ function ServicesSection() {
 					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
 				>
 					<img
-						src= {home}
+						src={home}
 						alt='Home'
 						className='w-full h-64 object-cover rounded-lg'
 					/>
@@ -55,8 +55,8 @@ function ServicesSection() {
 					transition={{ delay: 1.8, duration: 1 }}
 					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
 				>
-					<img 
-						src = {office}
+					<img
+						src={office}
 						alt='Office'
 						className='w-full h-64 object-cover rounded-lg'
 					/>
@@ -80,7 +80,7 @@ function ServicesSection() {
 					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
 				>
 					<img
-						src= {factory}
+						src={factory}
 						alt='Factory'
 						className='w-full h-64 object-cover rounded-lg'
 					/>

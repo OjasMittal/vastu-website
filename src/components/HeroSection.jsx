@@ -25,7 +25,7 @@ function HeroSection() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
-				className='w-full overflow-hidden -mt-38'
+				className='w-full overflow-hidden -mt-21'
 			>
 				<img
 					src= {header}
@@ -42,7 +42,7 @@ function HeroSection() {
 				transition={{ delay: 0.5, duration: 1 }}
 				className='mt-6 text-xl md:text-2xl text-orange-600 max-w-2xl'
 			>
-				Bring harmony, peace, and prosperity into your life with expert Vastu
+				Bring "harmony, peace, prosperity" into your life with expert Vastu
 				consultation.
 			</motion.p>
 

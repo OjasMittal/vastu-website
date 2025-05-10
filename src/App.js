@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import HomeServiceDetails from "./components/HomeServiceDetails";
 import OfficeServiceDetails from "./components/OfficeServiceDetails";
 import FactoryServiceDetails from "./components/FactoryServiceDetails";
+import WhatWeRectify from "./components/WhatWeRectify";
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
           element={
             <>
               <HeroSection />
-              <ServicesSection />
               <AboutSection />
+              <WhatWeRectify/>
+              <ServicesSection />
               <TestimonialCarousel />
               <Footer />
             </>
