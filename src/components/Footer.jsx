@@ -3,7 +3,7 @@ import footer from "../assets/footer.png";
 
 export default function Footer() {
 	return (
-		<footer id='contact' className='bg-orange-100 text-orange-900 py-12'>
+		<footer id='contact' className='bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-200 text-orange-900 py-12'>
 			<div className='max-w-6xl mx-auto px-6  pr-10 flex flex-col md:flex-row md:justify-between items-center'>
 				{/* Left: Profile Photo + Company Info */}
 				<div className='flex items-center mb-6 md:mb-0 text-center md:text-left space-x-4'>

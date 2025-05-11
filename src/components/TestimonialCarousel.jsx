@@ -99,7 +99,7 @@ export default function TestimonialCarousel() {
 	}, []);
 
 	return (
-		<div className='py-16 bg-orange-50 text-center overflow-hidden'>
+		<div className='py-16 bg-orange-100 text-center overflow-hidden'>
 			<h2 className='text-3xl md:text-4xl font-bold text-orange-800 mb-12'>
 				What Do Our Client's Say About Us?
 			</h2>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // You can also use Heroicons or SVGs
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
 	const [scrolled, setScrolled] = useState(false);

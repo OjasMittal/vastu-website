@@ -30,7 +30,7 @@ function AboutSection() {
 					className='w-full md:w-3/5 text-center md:text-left md:pl-12'
 				>
 					<h2 className='text-4xl md:text-5xl font-bold text-orange-800 mb-6'>
-						About Us
+						Why Us?
 					</h2>
 
 					<p className='text-lg text-gray-700 leading-relaxed mb-6'>
