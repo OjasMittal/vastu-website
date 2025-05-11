@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import BookConsultationModal from "./BookConsultationModal"; // Import here
+import BookConsultationModal from "./BookConsultationModal";
 import LottieAnimation from "./LottieAnimation";
 import header from "../assets/header.png";
 

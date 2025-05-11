@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import emailjs from 'emailjs-com';
 
 function BookConsultationModal({ showModal, setShowModal }) {
 	const [formData, setFormData] = useState({
@@ -24,38 +25,56 @@ function BookConsultationModal({ showModal, setShowModal }) {
 	};
 
 	const handleSubmit = (e) => {
-		e.preventDefault();
+  e.preventDefault();
 
-		const newErrors = {};
-		if (!formData.name) newErrors.name = "Name is required";
-		if (!formData.contactNo) newErrors.contactNo = "Contact number is required";
-		if (!formData.selectedDateTime)
-			newErrors.selectedDateTime = "Date and time are required";
+  const newErrors = {};
+  if (!formData.name) newErrors.name = "Name is required";
+  if (!formData.contactNo) newErrors.contactNo = "Contact number is required";
+  if (!formData.selectedDateTime)
+    newErrors.selectedDateTime = "Date and time are required";
 
-		setErrors(newErrors);
+  setErrors(newErrors);
 
-		if (Object.keys(newErrors).length === 0) {
-			const date = new Date(formData.selectedDateTime);
-			const formattedDate = date.toLocaleDateString("en-US", {
-				year: "numeric",
-				month: "long",
-				day: "numeric",
-			});
-			const formattedTime = date.toLocaleTimeString("en-US", {
-				hour: "2-digit",
-				minute: "2-digit",
-				hour12: true,
-			});
+  if (Object.keys(newErrors).length === 0) {
+    const date = new Date(formData.selectedDateTime);
+    const formattedDate = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    const formattedTime = date.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
 
-			const message = `Hi Tulika, I am ${formData.name}, I want to have a Vastu consultation with you on ${formattedDate} around ${formattedTime},\nKindly let me know about your availability and charges.\nYou can contact me on ${formData.contactNo}.\nThanks.`;
-			const encodedMessage = encodeURIComponent(message);
-			const whatsappUrl = `https://wa.me/9920092640?text=${encodedMessage}`;
+    const templateParams = {
+      name: formData.name,
+      contact: formData.contactNo,
+      date: formattedDate,
+      time: formattedTime,
+    };
 
-			window.open(whatsappUrl, "_blank");
+    emailjs
+      .send(
+        "service_ixw0cno",      
+        "template_6ddemqi",   
+        templateParams,
+        "OJYJoHKS7rf2lTVtX" 
+      )
+      .then(
+        (result) => {
+          alert("Consultation request sent via email!");
+          setShowModal(false);
+        },
+        (error) => {
+          alert("Failed to send email. Try again later.");
+          console.error(error);
+        }
+      );
+  }
+};
 
-			setShowModal(false);
-		}
-	};
 
 	if (!showModal) return null;
 
