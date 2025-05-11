@@ -27,33 +27,34 @@ function Navbar() {
 
 				{/* Desktop Nav */}
 				<div className='space-x-8 hidden md:flex'>
-					<Link
-						to='/'
-						className='text-orange-700 hover:text-orange-900 transition'
+					<a
+						href='#'
+						className='inline-block px-4 py-2 text-orange-800 font-semibold bg-transparent rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-orange-200 hover:shadow-lg'
 					>
 						Home
-					</Link>
+					</a>
+
 					<a
 						href='/#services'
-						className='text-orange-700 hover:text-orange-900 transition'
+						className='inline-block px-4 py-2 text-orange-800 font-semibold bg-transparent rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-orange-200 hover:shadow-lg'
 					>
 						Services
 					</a>
 					<a
 						href='/#about'
-						className='text-orange-700 hover:text-orange-900 transition'
+						className='inline-block px-4 py-2 text-orange-800 font-semibold bg-transparent rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-orange-200 hover:shadow-lg'
 					>
 						About
 					</a>
 					<a
 						href='/media'
-						className='text-orange-700 hover:text-orange-900 transition'
+						className='inline-block px-4 py-2 text-orange-800 font-semibold bg-transparent rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-orange-200 hover:shadow-lg'
 					>
 						Vastu Tips
 					</a>
 					<a
 						href='/#contact'
-						className='text-orange-700 hover:text-orange-900 transition'
+						className='inline-block px-4 py-2 text-orange-800 font-semibold bg-transparent rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-orange-200 hover:shadow-lg'
 					>
 						Contact
 					</a>

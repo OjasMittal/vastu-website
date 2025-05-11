@@ -50,7 +50,6 @@ const WhatWeRectify = () => {
 			id='whatWeRectify'
 			className='relative min-h-screen bg-cover bg-center bg-no-repeat bg-orange-100'
 		>
-
 			<div className='relative z-10 max-w-6xl mx-auto px-4 md:px-10 py-20'>
 				<h2 className='text-3xl md:text-4xl font-bold text-orange-800 text-center mb-12 drop-shadow'>
 					What We Help You With

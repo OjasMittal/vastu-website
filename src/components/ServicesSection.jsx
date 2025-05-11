@@ -58,6 +58,7 @@ function ServicesSection() {
 
 	return (
 		<section
+			id='services'
 			className='relative h-[90vh] w-full overflow-hidden'
 			onTouchStart={handleTouchStart}
 			onTouchEnd={handleTouchEnd}
