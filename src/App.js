@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
@@ -22,7 +21,6 @@ function App() {
       <FloatingButton />
       <ScrollToTop />
       <Routes>
-        {/* Main Landing Page Route */}
         <Route
           path="/"
           element={
@@ -36,8 +34,6 @@ function App() {
             </>
           }
         />
-
-        {/* New Service Detail Pages */}
         <Route path="/services/home" element={<HomeServiceDetails />} />
         <Route path="/services/office" element={<OfficeServiceDetails />} />
         <Route path="/services/factory" element={<FactoryServiceDetails />} />

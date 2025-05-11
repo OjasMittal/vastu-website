@@ -1,102 +1,145 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import home from "../assets/home_services.png";
 import office from "../assets/office_services.png";
 import factory from "../assets/factory_services.png";
 
+const slides = [
+	{
+		image: home,
+		title: "Home Vastu",
+		description: "Create a peaceful and harmonious home environment.",
+		link: "/services/home",
+	},
+	{
+		image: office,
+		title: "Office Vastu",
+		description: "Enhance positivity and productivity in your workspace.",
+		link: "/services/office",
+	},
+	{
+		image: factory,
+		title: "Factory Vastu",
+		description: "Maximize efficiency and profitability through Vastu.",
+		link: "/services/factory",
+	},
+];
+
 function ServicesSection() {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const timeoutRef = useRef(null);
+	const touchStartX = useRef(null);
+
+	const handleNext = () =>
+		setCurrentIndex((prev) => (prev + 1) % slides.length);
+	const handlePrev = () =>
+		setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+	const goToSlide = (index) => setCurrentIndex(index);
+
+	useEffect(() => {
+		timeoutRef.current = setTimeout(handleNext, 5000);
+		return () => clearTimeout(timeoutRef.current);
+	}, [currentIndex]);
+
+	const handleTouchStart = (e) => {
+		touchStartX.current = e.touches[0].clientX;
+	};
+
+	const handleTouchEnd = (e) => {
+		const touchEndX = e.changedTouches[0].clientX;
+		const diff = touchStartX.current - touchEndX;
+		if (diff > 50) handleNext();
+		else if (diff < -50) handlePrev();
+	};
+
+	const { image, title, description, link } = slides[currentIndex];
+
 	return (
-		<section id='services' className='py-20 bg-yellow-100'>
-			<motion.div
-				initial={{ opacity: 0, y: 50 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ delay: 1.2, duration: 1 }}
-				className='text-center'
+		<section
+			className='relative h-[90vh] w-full overflow-hidden'
+			onTouchStart={handleTouchStart}
+			onTouchEnd={handleTouchEnd}
+		>
+			{/* Background Image */}
+			<AnimatePresence mode='wait'>
+				<motion.div
+					key={currentIndex}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{ duration: 0.7, ease: "easeInOut" }}
+					className='absolute inset-0'
+				>
+					<img
+						src={image}
+						alt={title}
+						className='w-full h-full object-cover brightness-50'
+					/>
+				</motion.div>
+			</AnimatePresence>
+
+			{/* Content */}
+			<div className='relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6'>
+				<motion.h2
+					key={title}
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.3, duration: 1 }}
+					className='text-4xl md:text-6xl font-bold'
+				>
+					{title}
+				</motion.h2>
+				<motion.p
+					key={description}
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.3, duration: 1 }}
+					className='mt-4 text-lg md:text-2xl max-w-xl'
+				>
+					{description}
+				</motion.p>
+				<motion.div
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.3, duration: 1 }}
+				>
+					<Link to={link}>
+						<button className='mt-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-300'>
+							Know More
+						</button>
+					</Link>
+				</motion.div>
+			</div>
+
+			{/* Left Arrow */}
+			<button
+				onClick={handlePrev}
+				className='hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 backdrop-blur-md bg-white/10 hover:bg-white/20 text-white p-3 md:p-4 rounded-full border border-white/20 shadow-md hover:shadow-lg transition-transform transform hover:scale-110'
 			>
-				<h2 className='text-3xl md:text-4xl font-bold text-orange-800'>
-					Services We Offer
-				</h2>
-				<p className='mt-4 text-lg md:text-xl text-orange-600 max-w-3xl mx-auto'>
-					Vastu brings balance, health, wealth, and good relationships to your
-					space.
-				</p>
-			</motion.div>
+				<ChevronLeft size={28} strokeWidth={2.5} />
+			</button>
 
-			{/* Services Grid */}
-			<div className='mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12'>
-				{/* Home Service */}
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1.5, duration: 1 }}
-					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
-				>
-					<img
-						src={home}
-						alt='Home'
-						className='w-full h-64 object-cover rounded-lg'
-					/>
-					<h3 className='text-xl font-semibold text-orange-700 mt-4'>Home</h3>
-					<p className='mt-2 text-sm'>
-						Personalized Vastu solutions to create a harmonious living
-						environment.
-					</p>
-					<Link to='/services/home'>
-						<button className='mt-4 bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded'>
-							Know More
-						</button>
-					</Link>
-				</motion.div>
+			{/* Right Arrow */}
+			<button
+				onClick={handleNext}
+				className='hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-20 backdrop-blur-md bg-white/10 hover:bg-white/20 text-white p-3 md:p-4 rounded-full border border-white/20 shadow-md hover:shadow-lg transition-transform transform hover:scale-110'
+			>
+				<ChevronRight size={28} strokeWidth={2.5} />
+			</button>
 
-				{/* Office Service */}
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1.8, duration: 1 }}
-					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
-				>
-					<img
-						src={office}
-						alt='Office'
-						className='w-full h-64 object-cover rounded-lg'
+			{/* Dot Indicators */}
+			<div className='absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20'>
+				{slides.map((_, idx) => (
+					<button
+						key={idx}
+						onClick={() => goToSlide(idx)}
+						className={`w-3 h-3 rounded-full transition-all duration-300 ${
+							idx === currentIndex ? "bg-white" : "bg-white/50"
+						}`}
 					/>
-					<h3 className='text-xl font-semibold text-orange-700 mt-4'>Office</h3>
-					<p className='mt-2 text-sm'>
-						Boost success and positivity in your office space through Vastu
-						corrections.
-					</p>
-					<Link to='/services/office'>
-						<button className='mt-4 bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded'>
-							Know More
-						</button>
-					</Link>
-				</motion.div>
-
-				{/* Factory Service */}
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 2.1, duration: 1 }}
-					className='service-card bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between'
-				>
-					<img
-						src={factory}
-						alt='Factory'
-						className='w-full h-64 object-cover rounded-lg'
-					/>
-					<h3 className='text-xl font-semibold text-orange-700 mt-4'>
-						Factory
-					</h3>
-					<p className='mt-2 text-sm'>
-						Enhance production efficiency and profitability with Vastu
-						practices.
-					</p>
-					<Link to='/services/factory'>
-						<button className='mt-4 bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded'>
-							Know More
-						</button>
-					</Link>
-				</motion.div>
+				))}
 			</div>
 		</section>
 	);
