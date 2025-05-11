@@ -4,7 +4,7 @@ import mom from "../assets/mom_img.jpg";
 
 function AboutSection() {
 	return (
-		<section id='about' className='py-24 bg-yellow-100'>
+		<section id='about' className='py-16 bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-200'>
 			<div className='container mx-auto flex flex-col md:flex-row items-center justify-center px-6 md:px-12'>
 				{/* Image */}
 				<motion.div
@@ -17,7 +17,7 @@ function AboutSection() {
 					<img
 						src={mom}
 						alt='Tulika Mittal'
-						className='rounded-3xl shadow-md w-full max-w-[400px] md:max-w-[520px] mt-16'
+						className='rounded-xl shadow-lg w-full max-w-[400px] md:max-w-[500px] transform hover:scale-105 transition-transform duration-300'
 					/>
 				</motion.div>
 
@@ -34,20 +34,18 @@ function AboutSection() {
 					</h2>
 
 					<p className='text-lg text-gray-700 leading-relaxed mb-6'>
-						With years of expertise in Vastu consultancy,
+						With years of expertise in Vastu consultancy,{" "}
 						<span className='font-semibold text-gray-900'>
-							{" "}
-							Vastu Vid Tulika Mittal{" "}
-						</span>
+							Vastu Vid Tulika Mittal
+						</span>{" "}
 						specializes in creating spaces that radiate{" "}
 						<span className='font-semibold text-orange-700'>
-							positivity, prosperity, and success
-						</span>
-						. Our guidance is rooted in ancient wisdom combined with modern
-						practicality — ensuring real results{" "}
+							positivity, prosperity, and success.
+						</span>{" "}
+						Our guidance combines ancient wisdom with modern practicality — ensuring results
 						<span className='font-semibold text-orange-700'>
-							without any demolition , with simple - easy to do - effective
-							remedies.
+							{" "}
+							without demolition, with simple, effective remedies.
 						</span>
 					</p>
 
@@ -55,45 +53,47 @@ function AboutSection() {
 						{[
 							<>
 								Certified by{" "}
-								<span className='font-semibold text-orange-700'>MahaVastu</span>{" "}
-								– the most trusted name in Vastu Shastra.
+								<span className='font-semibold text-orange-700'>MahaVastu</span> — the
+								most trusted name in Vastu Shastra.
 							</>,
 							<>
-								Tailor-made Vastu solutions with personal visits for your{" "}
-								<span className='font-semibold'>home, office or factory</span>.
+								Tailor-made Vastu solutions for{" "}
+								<span className='font-semibold'>home, office, or factory</span>.
 							</>,
 							<>
-								<span className='font-semibold'>No demolition required</span> —
-								we offer simple, practical, and effective remedies.
+								<span className='font-semibold'>No demolition required</span> — simple
+								and effective remedies.
 							</>,
 							<>
-								Focused on enhancing your{" "}
+								Focused on enhancing{" "}
 								<span className='font-semibold'>
 									health, wealth, relationships, and career growth
-								</span>
-								.
+								</span>.
 							</>,
 						].map((item, index) => (
 							<li key={index} className='flex items-start'>
-								<span className='text-green-600 mr-2 mt-1'>✅</span>
+								<span className='text-green-600 mr-2 mt-1'>
+									<i className="fa fa-check-circle"></i>
+								</span>
 								<span>{item}</span>
 							</li>
 						))}
 					</ul>
 
 					<p className='text-lg text-gray-700 leading-relaxed'>
-						Our mission is to transform your living and working environments
-						into powerful energy hubs — promoting holistic well-being,
-						happiness, and abundance in your life.
+						Our mission is to transform your spaces into powerful energy hubs, promoting
+						holistic well-being, happiness, and abundance.
 					</p>
+
 					<p className='mt-6 text-lg'>
-					✨ Check out some{" "}
+						✨ Check out some{" "}
 						<Link
 							to='/media'
-							className='text-orange-700 font-semibold hover:underline'
+							className='text-orange-700 font-semibold hover:underline transition-all duration-300'
 						>
-							Vastu tips & videos
+							Vastu tips
 						</Link>
+						{" "} by Vastu Vid Tulika!
 					</p>
 				</motion.div>
 			</div>
