@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BarChart3, Heart, HeartPulse, Wallet, Briefcase, Smile } from "lucide-react";
+import {
+	BarChart3,
+	Heart,
+	HeartPulse,
+	Wallet,
+	Briefcase,
+	Smile,
+} from "lucide-react";
+import whatWeHelp from "../assets/what_we_help.png";
 
 const issues = [
 	{
@@ -26,7 +34,8 @@ const issues = [
 	{
 		icon: <BarChart3 className='text-purple-600 w-8 h-8' />,
 		title: "Increased Outcomes",
-		description: "Amplify success by aligning your environment with your intentions.",
+		description:
+			"Amplify success by aligning your environment with your intentions.",
 	},
 	{
 		icon: <Smile className='text-yellow-500 w-8 h-8' />,
@@ -41,12 +50,10 @@ const WhatWeRectify = () => {
 			id='whatWeRectify'
 			className='relative min-h-screen bg-cover bg-center bg-no-repeat'
 			style={{
-				backgroundImage:
-					"url('https://images.unsplash.com/photo-1597429903954-9557e50a0d45?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVscGluZyUyMGhhbmRzfGVufDB8fDB8fHww')",
+				backgroundImage: `url(${whatWeHelp})`,
 			}}
 		>
 			<div className='absolute inset-0 bg-white/50 backdrop-blur-[1.5px]'></div>
-
 
 			<div className='relative z-10 max-w-6xl mx-auto px-4 md:px-10 py-20'>
 				<h2 className='text-3xl md:text-4xl font-bold text-orange-800 text-center mb-12 drop-shadow'>
