@@ -1,7 +1,9 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function BookConsultationModal({ showModal, setShowModal }) {
 	const [formData, setFormData] = useState({
@@ -25,56 +27,54 @@ function BookConsultationModal({ showModal, setShowModal }) {
 	};
 
 	const handleSubmit = (e) => {
-  e.preventDefault();
+		e.preventDefault();
 
-  const newErrors = {};
-  if (!formData.name) newErrors.name = "Name is required";
-  if (!formData.contactNo) newErrors.contactNo = "Contact number is required";
-  if (!formData.selectedDateTime)
-    newErrors.selectedDateTime = "Date and time are required";
+		const newErrors = {};
+		if (!formData.name) newErrors.name = "Name is required";
+		if (!formData.contactNo) newErrors.contactNo = "Contact number is required";
+		if (!formData.selectedDateTime)
+			newErrors.selectedDateTime = "Date and time are required";
 
-  setErrors(newErrors);
+		setErrors(newErrors);
 
-  if (Object.keys(newErrors).length === 0) {
-    const date = new Date(formData.selectedDateTime);
-    const formattedDate = date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-    const formattedTime = date.toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    });
+		if (Object.keys(newErrors).length === 0) {
+			const date = new Date(formData.selectedDateTime);
+			const formattedDate = date.toLocaleDateString("en-US", {
+				year: "numeric",
+				month: "long",
+				day: "numeric",
+			});
+			const formattedTime = date.toLocaleTimeString("en-US", {
+				hour: "2-digit",
+				minute: "2-digit",
+				hour12: true,
+			});
 
-    const templateParams = {
-      name: formData.name,
-      contact: formData.contactNo,
-      date: formattedDate,
-      time: formattedTime,
-    };
-
-    emailjs
-      .send(
-        "service_ixw0cno",      
-        "template_6ddemqi",   
-        templateParams,
-        "OJYJoHKS7rf2lTVtX" 
-      )
-      .then(
-        (result) => {
-          alert("Consultation request sent via email!");
-          setShowModal(false);
-        },
-        (error) => {
-          alert("Failed to send email. Try again later.");
-          console.error(error);
-        }
-      );
-  }
-};
-
+			const templateParams = {
+				name: formData.name,
+				contact: formData.contactNo,
+				date: formattedDate,
+				time: formattedTime,
+			};
+			toast
+				.promise(
+					emailjs.send(
+						"service_ixw0cno",
+						"template_6ddemqi",
+						templateParams,
+						"OJYJoHKS7rf2lTVtX"
+					),
+					{
+						pending: "Sending request...",
+						success: "Consultation request sent successfully!",
+						error: "Failed to send email. Try again later.",
+					}
+				)
+				.then(() => {
+					setTimeout(() => setShowModal(false), 2000);
+				});
+		}
+	};
 
 	if (!showModal) return null;
 
@@ -165,6 +165,7 @@ function BookConsultationModal({ showModal, setShowModal }) {
 					</div>
 				</form>
 			</div>
+			<ToastContainer position='bottom-center' />
 		</div>
 	);
 }
