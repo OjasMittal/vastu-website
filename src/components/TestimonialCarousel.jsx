@@ -4,7 +4,7 @@ import Flag from "react-world-flags";
 
 const testimonials = [
 	{
-		name: "Sandeep Rawat",
+		name: "Anonymous",
 		feedback:
 			"Their Vastu solutions changed the energy of our home! We feel more peace and prosperity now. Highly recommended!",
 		city: "Mumbai",
@@ -12,7 +12,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Chandan Agrawal",
+		name: "Anonymous",
 		feedback:
 			"Incredible experience. Every suggestion was practical and made a real difference to our business growth.",
 		city: "London",
@@ -20,7 +20,7 @@ const testimonials = [
 		countryCode: "GB",
 	},
 	{
-		name: "Ankur Chandra",
+		name: "Anonymous",
 		feedback:
 			"Tulika Maam's inputs on color paint in house and a few other changes helped me to get more success in my career and promotion and also health good. Thanks for your advise and checking in regularly.",
 		city: "Hyderabad",
@@ -28,7 +28,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Anchal Gupta",
+		name: "Anonymous",
 		feedback:
 			"I am grateful for their professional advice. Positive vibes and success followed after implementing their remedies.",
 		city: "Ho Chi Minh City",
@@ -36,7 +36,7 @@ const testimonials = [
 		countryCode: "VN",
 	},
 	{
-		name: "Abhishek Bhattacharya",
+		name: "Anonymous",
 		feedback:
 			"Very Small & easy to do remedies given by Tulika Maam, helped me improve my relations with my wife and kids.",
 		city: "Kolkata",
@@ -44,7 +44,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Megha Jain",
+		name: "Anonymous",
 		feedback:
 			"My business had been stagnant for months. After implementing Tulika Ma'am's suggestions, we saw growth within weeks. Truly magical!",
 		city: "Jaipur",
@@ -52,7 +52,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Rahul Verma",
+		name: "Anonymous",
 		feedback:
 			"I had money stuck for over a year. Just a few changes as advised,and the payments started clearing up.Can't thank her enough!",
 		city: "Lucknow",
@@ -60,7 +60,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Priyanka Bansal",
+		name: "Anonymous",
 		feedback:
 			"Earlier, I used to fall ill frequently. Tulika Ma'am's remedies brought visible improvement in my health and energy levels.",
 		city: "Chandigarh",
@@ -68,7 +68,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Vikas Mehta",
+		name: "Anonymous",
 		feedback:
 			"Her consultation helped me attract more clients to my architecture firm. Business has been booming since.",
 		city: "Pune",
@@ -76,7 +76,7 @@ const testimonials = [
 		countryCode: "IN",
 	},
 	{
-		name: "Renu Agarwal",
+		name: "Anonymous",
 		feedback:
 			"After years of trying, my salon finally started getting steady clients post the Vastu corrections. Highly satisfied!",
 		city: "Indore",
