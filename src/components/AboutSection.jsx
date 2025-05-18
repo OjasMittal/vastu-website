@@ -4,7 +4,10 @@ import mom from "../assets/mom_img.jpg";
 
 function AboutSection() {
 	return (
-		<section id='about' className='py-16 bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-200'>
+		<section
+			id='about'
+			className='py-16 bg-gradient-to-r from-yellow-200 via-orange-100 to-yellow-200'
+		>
 			<div className='container mx-auto flex flex-col md:flex-row items-center justify-center px-6 md:px-12'>
 				{/* Image */}
 				<motion.div
@@ -30,7 +33,7 @@ function AboutSection() {
 					className='w-full md:w-3/5 text-center md:text-left md:pl-12'
 				>
 					<h2 className='text-4xl md:text-5xl font-bold text-orange-800 mb-6'>
-						Why Us?
+						Why We?
 					</h2>
 
 					<p className='text-lg text-gray-700 leading-relaxed mb-6'>
@@ -42,47 +45,107 @@ function AboutSection() {
 						<span className='font-semibold text-orange-700'>
 							positivity, prosperity, and success.
 						</span>{" "}
-						Our guidance combines ancient wisdom with modern practicality — ensuring results
+						Our guidance combines ancient wisdom with modern practicality —
+						ensuring results
 						<span className='font-semibold text-orange-700'>
 							{" "}
 							without demolition, with simple, effective remedies.
 						</span>
 					</p>
 
-					<ul className='space-y-3 mb-6 text-left text-gray-700'>
-						{[
-							<>
-								Certified by{" "}
-								<span className='font-semibold text-orange-700'>MahaVastu</span> — the
-								most trusted name in Vastu Shastra.
-							</>,
-							<>
-								Tailor-made Vastu solutions for{" "}
-								<span className='font-semibold'>home, office, or factory</span>.
-							</>,
-							<>
-								<span className='font-semibold'>No demolition required</span> — simple
-								and effective remedies.
-							</>,
-							<>
-								Focused on enhancing{" "}
-								<span className='font-semibold'>
-									health, wealth, relationships, and career growth
-								</span>.
-							</>,
-						].map((item, index) => (
-							<li key={index} className='flex items-start'>
-								<span className='text-green-600 mr-2 mt-1'>
-									<i className="fa fa-check-circle"></i>
-								</span>
-								<span>{item}</span>
-							</li>
-						))}
-					</ul>
+					<div className='overflow-x-auto mb-6'>
+						<table className='w-full max-w-3xl mx-auto text-left border-collapse text-sm md:text-base'>
+							<thead>
+								<tr className='bg-orange-200 text-orange-900'>
+									<th className='p-3 border border-orange-300 font-semibold'>
+										Why Choose Us Over Others?
+									</th>
+									<th className='p-3 border border-orange-300 font-semibold text-center'>
+										Vastu Vid Tulika
+									</th>
+									<th className='p-3 border border-orange-300 font-semibold text-center'>
+										Others
+									</th>
+								</tr>
+							</thead>
+							<tbody className='text-gray-700'>
+								{[
+									{
+										point:
+											"Certified by MahaVastu (India's top Vastu Training Center)",
+										us: true,
+										others: false,
+									},
+									{
+										point:
+											"Custom Tailor Made Vastu solutions for  your Home/Office/Factory",
+										us: true,
+										others: false,
+									},
+									{
+										point: "Personal visits to Client's Site",
+										us: true,
+										others: false,
+									},
+									{
+										point: (
+											<>
+												No Demolition done
+												<br />
+												<span className='text-sm text-gray-600'>
+													(We suggest very simple & easy to do remedies that
+													suits your pocket)
+												</span>
+											</>
+										),
+										us: true,
+										others: false,
+									},
+									{
+										point: (
+											<>
+												Advanced and Precise Tools & Softwares
+												<br />
+												<span className='text-sm text-gray-600'>
+													(Even a 1° error in Vastu solutions can cause
+													problems)
+												</span>
+											</>
+										),
+										us: true,
+										others: false,
+									},
+								].map((row, idx) => (
+									<tr
+										key={idx}
+										className={idx % 2 === 0 ? "bg-yellow-50" : "bg-white"}
+									>
+										<td className='p-3 border border-orange-200'>
+											{row.point}
+										</td>
+										<td className='p-3 border border-orange-200 text-center text-green-600'>
+											{row.us ? (
+												<i className='fa fa-check-circle' />
+											) : (
+												<i className='fa fa-times-circle text-red-500' />
+											)}
+										</td>
+										<td className='p-3 border border-orange-200 text-center text-red-500'>
+											{row.others ? (
+												<i className='fa fa-check-circle text-green-600' />
+											) : (
+												<i className='fa fa-times-circle' />
+											)}
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
 
 					<p className='text-lg text-gray-700 leading-relaxed'>
-						Our mission is to transform your spaces into powerful energy hubs, promoting
-						holistic well-being, happiness, and abundance.
+						Our mission is to transform your spaces into powerful energy hubs,
+						promoting holistic well-being, happiness, and abundance.
 					</p>
 
 					<p className='mt-6 text-lg'>
@@ -92,8 +155,8 @@ function AboutSection() {
 							className='text-orange-700 font-semibold hover:underline transition-all duration-300'
 						>
 							Vastu tips
-						</Link>
-						{" "} by Vastu Vid Tulika!
+						</Link>{" "}
+						by Vastu Vid Tulika!
 					</p>
 				</motion.div>
 			</div>
