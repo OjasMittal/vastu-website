@@ -60,8 +60,8 @@ function HeroSection() {
 					<span className='font-semibold underline'>Free!</span>
 				</span>
 				<div className='absolute left-1/2 -translate-x-1/2 mt-2 w-64 rounded-lg bg-white p-3 text-sm text-gray-700 shadow-lg border border-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10'>
-					Covers a 20-minute session to understand your problems, basic Vastu
-					assessment, and expert guidance on next steps.
+					A 20-minute session to understand your problems and a basic Vastu
+					assessment.
 				</div>
 			</div>
 
