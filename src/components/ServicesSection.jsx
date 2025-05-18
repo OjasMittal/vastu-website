@@ -32,11 +32,21 @@ function ServicesSection() {
 	const timeoutRef = useRef(null);
 	const touchStartX = useRef(null);
 
-	const handleNext = () =>
+	const handleNext = () => {
+		setDirection(1);
 		setCurrentIndex((prev) => (prev + 1) % slides.length);
-	const handlePrev = () =>
+	};
+
+	const handlePrev = () => {
+		setDirection(-1);
 		setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-	const goToSlide = (index) => setCurrentIndex(index);
+	};
+
+	const goToSlide = (index) => {
+		setDirection(index > currentIndex ? 1 : -1);
+		setCurrentIndex(index);
+	};
+	const [direction, setDirection] = useState(0);
 
 	useEffect(() => {
 		timeoutRef.current = setTimeout(handleNext, 5000);
@@ -64,13 +74,14 @@ function ServicesSection() {
 			onTouchEnd={handleTouchEnd}
 		>
 			{/* Background Image */}
-			<AnimatePresence mode='wait'>
+			<AnimatePresence mode='wait' custom={direction}>
 				<motion.div
 					key={currentIndex}
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 0.7, ease: "easeInOut" }}
+					custom={direction}
+					initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
+					transition={{ duration: 1, ease: "easeInOut" }}
 					className='absolute inset-0'
 				>
 					<img
@@ -83,36 +94,53 @@ function ServicesSection() {
 
 			{/* Content */}
 			<div className='relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6'>
-				<motion.h2
-					key={title}
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.3, duration: 1 }}
-					className='text-4xl md:text-6xl font-bold'
-				>
-					{title}
-				</motion.h2>
-				<motion.p
-					key={description}
-					initial={{ opacity: 0, y: 10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.3, duration: 1 }}
-					className='mt-4 text-lg md:text-2xl max-w-xl'
-				>
-					{description}
-				</motion.p>
-				<motion.div
-					initial={{ opacity: 0, y: 10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.3, duration: 1 }}
-				>
-					<Link to={link}>
-						<button className='mt-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-300'>
-							Know More
-						</button>
-					</Link>
-				</motion.div>
-			</div>
+	<AnimatePresence mode='wait' custom={direction}>
+	<motion.h2
+		key={title}
+		custom={direction}
+		initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
+		animate={{ x: 0, opacity: 1 }}
+		exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
+		transition={{ duration: 1, ease: "easeInOut" }}
+		className='text-4xl md:text-6xl font-bold mb-4'
+	>
+		{title}
+	</motion.h2>
+</AnimatePresence>
+
+<AnimatePresence mode='wait' custom={direction}>
+	<motion.p
+		key={description}
+		custom={direction}
+		initial={{ x: direction > 0 ? 80 : -80, opacity: 0 }}
+		animate={{ x: 0, opacity: 1 }}
+		exit={{ x: direction > 0 ? -80 : 80, opacity: 0 }}
+		transition={{ duration: 1, ease: "easeInOut" }}
+		className='text-lg md:text-2xl max-w-xl mb-6'
+	>
+		{description}
+	</motion.p>
+</AnimatePresence>
+
+<AnimatePresence mode='wait' custom={direction}>
+	<motion.div
+		key={currentIndex}
+		custom={direction}
+		initial={{ y: 20, opacity: 0 }}
+		animate={{ y: 0, opacity: 1 }}
+		exit={{ y: -20, opacity: 0 }}
+		transition={{ duration: 1, ease: "easeInOut" }}
+	>
+		<Link to={link}>
+			<button className='mt-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-300'>
+				Know More
+			</button>
+		</Link>
+	</motion.div>
+</AnimatePresence>
+
+</div>
+
 
 			{/* Left Arrow */}
 			<button
