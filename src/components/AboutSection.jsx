@@ -90,6 +90,19 @@ function AboutSection() {
 									{
 										point: (
 											<>
+												Guaranteed Results
+												<br />
+												<span className='text-sm text-gray-600'>
+													(We have a 100% Success Rate!)
+												</span>
+											</>
+										),
+										us: true,
+										others: false,
+									},
+									{
+										point: (
+											<>
 												No Demolition done
 												<br />
 												<span className='text-sm text-gray-600'>
@@ -149,7 +162,7 @@ function AboutSection() {
 					</p>
 
 					<p className='mt-6 text-lg'>
-						✨ Check out some{" "}
+						✨ Check out some quick {" "}
 						<Link
 							to='/media'
 							className='text-orange-700 font-semibold hover:underline transition-all duration-300'
